@@ -9,40 +9,33 @@ public class ArraysCopy {
                 6, -6, -2_000_000_185, -2_000_000_000, 2_000_000_056
         };
 
-        // Asc sort array
-        int[] sortedAsc = sortAsc(array);
+        // Copy array
+        int[] copy = new int[array.length];
+        copy(array, 0, copy, 0, 4);
 
         // Print the ask sorted array
         System.out.println("Given array: " + Arrays.toString(array));
-        System.out.println("Sorted Asc: " + Arrays.toString(sortedAsc));
+        System.out.println("Copied array: " + Arrays.toString(copy));
     }
 
+
     /**
-     * Asc sort the array
+     * Copies number of elements from the given position of the source array
+     * to the destination array starting from the given destination position
      *
-     * @param array array to sort in ascending order
-     * @return sortedin ascending order array
+     * @param src source array to copy elements
+     * @param srcPos position to start copy from
+     * @param dest destination array to copy elements
+     * @param destPos position to start copy to
+     * @param numberOfElementsToCopy number of elements to copy from src to dest
      */
-    private static int[] sortAsc(int[] array) {
-        if (array.length == 0) {
-            throw new IllegalArgumentException("Given array is empty");
-        }
-
-        // Copy array
-        int[] arrayCopy = new int[array.length];
-        System.arraycopy(array, 0, arrayCopy, 0, array.length);
-
-        // Sort the copy
-        int aux = 0;
-        for (int i = 0; i < arrayCopy.length; i++) {
-            for (int k = i + 1; k < arrayCopy.length; k++) {
-                if (arrayCopy[i] > arrayCopy[k]) {
-                    aux = arrayCopy[i];
-                    arrayCopy[i] = arrayCopy[k];
-                    arrayCopy[k] = aux;
-                }
-            }
-        }
-        return arrayCopy;
+    private static void copy(
+            int[] src,
+            int srcPos,
+            int[] dest,
+            int destPos,
+            int numberOfElementsToCopy
+    ) {
+        // TODO implement the method
     }
 }
