@@ -6,12 +6,12 @@ public class ArraysCopy {
     public static void main(String[] args) {
         // Array initialization
         int[] array = new int[]{
-                6, -6, -2_000_000_185, -2_000_000_000, 2_000_000_056
+                0, 15, 7, 8, 10, 0
         };
 
         // Copy array
         int[] copy = new int[array.length];
-        copy(array, 0, copy, 0, 4);
+        copy(array, 1, copy, 3, 3);
 
         // Print the ask sorted array
         System.out.println("Given array: " + Arrays.toString(array));
@@ -36,6 +36,10 @@ public class ArraysCopy {
             int destPos,
             int numberOfElementsToCopy
     ) {
-        // TODO implement the method
+        int k = destPos;
+        for (int i = srcPos; i < srcPos + numberOfElementsToCopy; i++) {
+            dest[k] = src[i];
+            k++;
+        }
     }
-}
+    }
