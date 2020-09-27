@@ -36,10 +36,33 @@ public class ArraysCopy {
             int destPos,
             int numberOfElementsToCopy
     ) {
+        checkArguments(src, srcPos, dest, destPos, numberOfElementsToCopy);
         int k = destPos;
         for (int i = srcPos; i < srcPos + numberOfElementsToCopy; i++) {
             dest[k] = src[i];
             k++;
         }
     }
+
+    private static void checkArguments(int[] src, int srcPos, int[] dest, int destPos, int numberOfElementsToCopy) {
+        // srcPos can be bigger than src.length
+        if (srcPos >= src.length) {
+            throw new IllegalArgumentException("Source Position bigger than length of array");
+        }
+
+        // srcPos + numberOfElementsToCopy can be bigger than src.length
+        if (srcPos + numberOfElementsToCopy >= src.length) {
+            throw new IllegalArgumentException("Source Position + numberOfElementsToCopy is bigger than src.length");
+        }
+
+        // destPos can be bigger than dest.length
+        if (destPos >= dest.length) {
+            throw new IllegalArgumentException("Destination Position is bigger than Destination Length");
+        }
+
+        // destPos + numberOfElementsToCopy can be bigger than dest.length
+        if (destPos + numberOfElementsToCopy >= dest.length) {
+            throw new IllegalArgumentException("Destination Position + numberOfElementsToCopy is bigger than Destination Length");
+        }
     }
+}
