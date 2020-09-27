@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class MaxModuleElement {
     public static void main(String[] args) {
+
         // Array initialization
         int[] array = new int[]{
                 6, -6, -2_000_000_185, -2_000_000_000, 2_000_000_056
